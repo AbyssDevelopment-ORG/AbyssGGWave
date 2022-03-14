@@ -4,3 +4,5 @@ main: net.abyssdev.abyssggwave.AbyssGGWave
 api-version: 1.16
 authors:
     - Relocation
+depend:
+    - AbyssLib

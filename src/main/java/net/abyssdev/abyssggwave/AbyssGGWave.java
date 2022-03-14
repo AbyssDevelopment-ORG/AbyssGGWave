@@ -14,7 +14,7 @@ public final class AbyssGGWave extends AbyssPlugin {
     private boolean ggWaveActive = false;
 
     @Override
-    public void onStart() {
+    public void onEnable() {
         this.saveDefaultConfig();
         this.loadMessages();
 
@@ -25,7 +25,7 @@ public final class AbyssGGWave extends AbyssPlugin {
     }
 
     @Override
-    public void onStop() {
+    public void onDisable() {
         this.command.unregister();
     }
 

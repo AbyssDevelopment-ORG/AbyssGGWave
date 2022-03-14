@@ -45,7 +45,7 @@ public final class StartCommand extends SubCommand {
         final StringBuilder builder = new StringBuilder();
 
         for (int i = 2; i < context.getArguments().length; i++) {
-            if (!builder.isEmpty()) {
+            if (!builder.toString().isEmpty()) {
                 builder.append(" ");
             }
 
