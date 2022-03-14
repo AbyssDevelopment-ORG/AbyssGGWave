@@ -1,0 +1,6 @@
+name: AbyssGGWave
+version: '${project.version}'
+main: net.abyssdev.abyssggwave.AbyssGGWave
+api-version: 1.16
+authors:
+    - Relocation

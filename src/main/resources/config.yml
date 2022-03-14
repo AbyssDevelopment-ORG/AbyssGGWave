@@ -1,0 +1,119 @@
+gg-messages:
+    - '&a&lGG'
+    - '&b&lGG'
+    - '&c&lGG'
+    - '&d&lGG'
+    - '&e&lGG'
+    - '&f&lGG'
+    - '&1&lGG'
+    - '&2&lGG'
+    - '&3&lGG'
+    - '&4&lGG'
+    - '&5&lGG'
+    - '&6&lGG'
+    - '&7&lGG'
+    - '&8&lGG'
+    - '&9&lGG'
+    - '&a&l&oGG'
+    - '&b&l&oGG'
+    - '&c&l&oGG'
+    - '&d&l&oGG'
+    - '&e&l&oGG'
+    - '&f&l&oGG'
+    - '&1&l&oGG'
+    - '&2&l&oGG'
+    - '&3&l&oGG'
+    - '&4&l&oGG'
+    - '&5&l&oGG'
+    - '&6&l&oGG'
+    - '&7&l&oGG'
+    - '&8&l&oGG'
+    - '&9&l&oGG'
+    - '&a&l&nGG'
+    - '&b&l&nGG'
+    - '&c&l&nGG'
+    - '&d&l&nGG'
+    - '&e&l&nGG'
+    - '&f&l&nGG'
+    - '&1&l&nGG'
+    - '&2&l&nGG'
+    - '&3&l&nGG'
+    - '&4&l&nGG'
+    - '&5&l&nGG'
+    - '&6&l&nGG'
+    - '&7&l&nGG'
+    - '&8&l&nGG'
+    - '&9&l&nGG'
+    - '&a&l&k::&r &b&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &c&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &d&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &f&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &1&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &2&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &3&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &4&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &5&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &6&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &7&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &8&l&nGG&r &a&l&k::'
+    - '&a&l&k::&r &9&l&nGG&r &a&l&k::'
+    - '&8- &1&lGG&r &8-'
+    - '&8- &2&lGG&r &8-'
+    - '&8- &3&lGG&r &8-'
+    - '&8- &4&lGG&r &8-'
+    - '&8- &5&lGG&r &8-'
+    - '&8- &6&lGG&r &8-'
+    - '&8- &7&lGG&r &8-'
+    - '&8- &a&lGG&r &8-'
+    - '&8- &9&lGG&r &8-'
+
+commands:
+    - "effect {{NAME}} 1 120"
+    - "eco give {{NAME}} 1000"
+
+messages:
+    "donate":
+        sound:
+            enabled: true
+            value: "ORB_PICKUP"
+            volume: 1
+            pitch: 1
+        message:
+            enabled: true
+            value:
+                - "&6&l▉▉▉▉▉▉▉▉"
+                - "&6&l▉&e&l▉▉&6&l▉▉&e&l▉▉&6&l▉"
+                - "&6&l▉&e&l▉▉&6&l▉▉&e&l▉▉&6&l▉ &f&m-- &e &c&lG&6&lG &e&lW&a&lA&b&lV&d&lE &c&lA&6&lC&e&lT&a&lI&b&lV&d&lA&c&lT&6&lE&e&lD &f&m--"
+                - "&6&l▉▉▉▉▉▉▉▉ &e&lWOW! &6Thanks to &f%player% &6for donating!"
+                - "&6&l▉▉▉▉▉▉▉▉ &6They purchased &e%package% &6using &f/buy&6!"
+                - "&6&l▉&e&l▉▉&6&l▉▉&e&l▉▉&6&l▉ &cTh&6er&ee i&as a &b60&d% o&cff &6re&ele&aas&be s&dal&ce!"
+                - "&6&l▉▉&e&l▉▉▉▉&6&l▉▉"
+                - "&6&l▉▉▉▉▉▉▉▉"
+    "help":
+        sound:
+            enabled: true
+            value: "ORB_PICKUP"
+            volume: 1
+            pitch: 1
+        message:
+            enabled: true
+            value:
+                - "&3&m--------------------------------"
+                - " "
+                - "&b&lAbyssDev &8&l┃ &bGGWave Help"
+                - "&7&oMade by &f&oRelocation#0001&7&o."
+                - " "
+                - "&3&lCOMMANDS:"
+                - "&3&l» &b/ggwave start <player> <duration> <package>"
+                - " "
+                - "&3&m--------------------------------"
+    "no-permission":
+        sound:
+            enabled: true
+            value: "ORB_PICKUP"
+            volume: 1
+            pitch: 1
+        message:
+            enabled: true
+            value:
+                - "&cNo permission"
