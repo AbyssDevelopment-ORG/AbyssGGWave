@@ -5,19 +5,20 @@ import net.abyssdev.abyssggwave.commands.GGWaveCommand;
 import net.abyssdev.abyssggwave.listeners.ChatListener;
 import net.abyssdev.abysslib.plugin.AbyssPlugin;
 import net.abyssdev.abysslib.text.MessageCache;
+import org.bukkit.configuration.file.FileConfiguration;
 
 @Getter
 public final class AbyssGGWave extends AbyssPlugin {
 
+    private final FileConfiguration config = this.getConfig("config");
+    private final MessageCache messageCache = new MessageCache(this.config);
+
     private GGWaveCommand command;
-    private MessageCache messageCache;
     private boolean ggWaveActive = false;
 
     @Override
     public void onEnable() {
-        this.saveDefaultConfig();
-        this.loadMessages();
-
+        this.loadMessages(this.messageCache, this.getConfig());
         this.command = new GGWaveCommand(this);
         this.command.register();
 
@@ -27,11 +28,6 @@ public final class AbyssGGWave extends AbyssPlugin {
     @Override
     public void onDisable() {
         this.command.unregister();
-    }
-
-    private void loadMessages() {
-        this.messageCache = new MessageCache(this.getConfig());
-        this.loadMessages(this.messageCache, this.getConfig());
     }
 
     public void setGgWaveActive(final boolean ggWaveActive) {

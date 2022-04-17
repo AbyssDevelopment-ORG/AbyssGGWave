@@ -68,8 +68,7 @@ gg-messages:
     - '&8- &9&lGG&r &8-'
 
 commands:
-    - "effect {{NAME}} 1 120"
-    - "eco give {{NAME}} 1000"
+    - "eco give %player% 1000"
 
 messages:
     "donate":
@@ -81,14 +80,14 @@ messages:
         message:
             enabled: true
             value:
-                - "&6&l▉▉▉▉▉▉▉▉"
-                - "&6&l▉&e&l▉▉&6&l▉▉&e&l▉▉&6&l▉"
-                - "&6&l▉&e&l▉▉&6&l▉▉&e&l▉▉&6&l▉ &f&m-- &e &c&lG&6&lG &e&lW&a&lA&b&lV&d&lE &c&lA&6&lC&e&lT&a&lI&b&lV&d&lA&c&lT&6&lE&e&lD &f&m--"
-                - "&6&l▉▉▉▉▉▉▉▉ &e&lWOW! &6Thanks to &f%player% &6for donating!"
-                - "&6&l▉▉▉▉▉▉▉▉ &6They purchased &e%package% &6using &f/buy&6!"
-                - "&6&l▉&e&l▉▉&6&l▉▉&e&l▉▉&6&l▉ &cTh&6er&ee i&as a &b60&d% o&cff &6re&ele&aas&be s&dal&ce!"
-                - "&6&l▉▉&e&l▉▉▉▉&6&l▉▉"
-                - "&6&l▉▉▉▉▉▉▉▉"
+                - "&3&m--------------------------------"
+                - " "
+                - "&b&l   GGWave Event Activated"
+                - " "
+                - "&7&o  Congratulate &b&o%player%"
+                - "&7&o for purchasing &b&o%package%"
+                - " "
+                - "&3&m--------------------------------"
     "help":
         sound:
             enabled: true
