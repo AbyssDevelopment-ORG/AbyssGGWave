@@ -26,12 +26,14 @@ public final class GGWaveCommand extends Command<CommandSender> {
 
     @Override
     public void execute(final CommandContext<CommandSender> context) {
-        if (!context.getSender().hasPermission("abyssggwave.admin")) {
-            this.plugin.getMessageCache().sendMessage(context.getSender(), "messages.no-permission");
+        final CommandSender sender = context.getSender();
+
+        if (!sender.hasPermission("abyssggwave.admin")) {
+            this.plugin.getMessageCache().sendMessage(sender, "messages.no-permission");
             return;
         }
 
-        this.plugin.getMessageCache().sendMessage(context.getSender(), "messages.help");
+        this.plugin.getMessageCache().sendMessage(sender, "messages.help");
     }
 
 }
