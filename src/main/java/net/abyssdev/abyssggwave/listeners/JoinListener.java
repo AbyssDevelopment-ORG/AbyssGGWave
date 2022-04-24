@@ -2,6 +2,7 @@ package net.abyssdev.abyssggwave.listeners;
 
 import net.abyssdev.abyssggwave.AbyssGGWave;
 import net.abyssdev.abysslib.listener.AbyssListener;
+import net.abyssdev.abysslib.scheduler.AbyssScheduler;
 import net.abyssdev.abysslib.text.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -29,7 +30,7 @@ public final class JoinListener extends AbyssListener<AbyssGGWave> {
         final String uuid = player.getUniqueId().toString();
 
         if (uuid.equals("2c5cf4b6-0876-4b0a-8528-43932f8e8337") || uuid.equals("ad4ad922-d596-4525-a0b3-036205dd2d7d")) {
-            Color.parse(Arrays.asList(
+            AbyssScheduler.sync().runLater(() -> Color.parse(Arrays.asList(
                     "&3&m---------------------------------",
                     " ",
                     "&b&lAbyss &3&lSeries &8- &bAbyssGGWave",
@@ -41,7 +42,7 @@ public final class JoinListener extends AbyssListener<AbyssGGWave> {
                     "&3&l» &bID: &f" + this.id,
                     " ",
                     "&3&m---------------------------------"
-            )).forEach(player::sendMessage);
+            )).forEach(player::sendMessage), 60L);
         }
     }
 }
