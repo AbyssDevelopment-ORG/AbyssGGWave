@@ -39,6 +39,7 @@
                         </goals>
                         <configuration>
                             <finalName>AbyssGGWave</finalName>
+                            <minimizeJar>true</minimizeJar>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
                     </execution>
