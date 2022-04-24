@@ -1,17 +1,10 @@
 pipeline {
     agent any
 
-    stages {
-        stage("Build") {
-            post {
-                success {
-                    archiveArtifacts artifacts: 'target/AbyssGGWave.jar'
-                }
-            }
-        }
-    }
-
     post {
+        success {
+            archiveArtifacts artifacts: 'AbyssGGWave.jar'
+        }
         always {
             cleanWs()
         }
