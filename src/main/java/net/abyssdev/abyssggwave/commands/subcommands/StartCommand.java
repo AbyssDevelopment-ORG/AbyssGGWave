@@ -64,7 +64,9 @@ public final class StartCommand extends SubCommand {
                 .addPlaceholder("%package%", builder.toString());
 
         for (final String command : this.commands) {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("%player%", target.getName()));
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command
+                    .replace("%player%", target.getName())
+                    .replace("%package%", builder.toString()));
         }
 
         for (final Player player : Bukkit.getOnlinePlayers()) {
