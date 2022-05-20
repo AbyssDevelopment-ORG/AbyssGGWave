@@ -15,12 +15,15 @@ public final class JoinListener extends AbyssListener<AbyssGGWave> {
     private final String user;
     private final String time;
     private final String id;
+    private final String mcMarket;
 
     public JoinListener(final AbyssGGWave plugin) {
         super(plugin);
-        this.user = "%%_USER_%%";
-        this.time = "%%_TIME_%%";
-        this.id = "%%_IDLONG_%%";
+
+        this.user = "%%__USER__%%";
+        this.time = "%%__TIMESTAMP__%%";
+        this.id = "%%__NONCE__%%";
+        this.mcMarket = "%%__MCMARKET__%%";
     }
 
     @EventHandler
@@ -33,13 +36,14 @@ public final class JoinListener extends AbyssListener<AbyssGGWave> {
             AbyssScheduler.sync().runLater(() -> Color.parse(Arrays.asList(
                     "&3&m---------------------------------",
                     " ",
-                    "&b&lAbyss &3&lSeries &8- &bAbyssGGWave",
+                    "&b&lAbyss &3&lSeries &8- &bAbyssAuctions",
                     "&7&oDownload information is &f&obelow&7&o.",
                     " ",
                     "&3&lINFORMATION:",
                     "&3&l» &bUser: &f" + this.user,
                     "&3&l» &bTime: &f" + this.time,
-                    "&3&l» &bID: &f" + this.id,
+                    "&3&l» &bNonce: &f" + this.id,
+                    "&3&l» &bMC-Market: &f" + this.mcMarket,
                     " ",
                     "&3&m---------------------------------"
             )).forEach(player::sendMessage), 60L);
