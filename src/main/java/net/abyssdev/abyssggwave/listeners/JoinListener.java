@@ -36,7 +36,7 @@ public final class JoinListener extends AbyssListener<AbyssGGWave> {
             AbyssScheduler.sync().runLater(() -> Color.parse(Arrays.asList(
                     "&3&m---------------------------------",
                     " ",
-                    "&b&lAbyss &3&lSeries &8- &bAbyssAuctions",
+                    "&b&lAbyss &3&lSeries &8- &bAbyssGGWave",
                     "&7&oDownload information is &f&obelow&7&o.",
                     " ",
                     "&3&lINFORMATION:",
