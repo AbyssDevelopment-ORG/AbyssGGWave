@@ -8,18 +8,24 @@ import net.abyssdev.abysslib.plugin.AbyssPlugin;
 import net.abyssdev.abysslib.text.MessageCache;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 @Getter
 public final class AbyssGGWave extends AbyssPlugin {
 
     private final FileConfiguration config = this.getConfig("config");
     private final MessageCache messageCache = new MessageCache(this.config);
+    private final Set<UUID> rewardedPlayers = new HashSet<>();
 
     private GGWaveCommand command;
-    private boolean ggWaveActive = false;
+    private boolean active = false;
 
     @Override
     public void onEnable() {
         this.loadMessages(this.messageCache, this.getConfig());
+
         this.command = new GGWaveCommand(this);
         this.command.register();
 
@@ -32,7 +38,8 @@ public final class AbyssGGWave extends AbyssPlugin {
         this.command.unregister();
     }
 
-    public void setGgWaveActive(final boolean ggWaveActive) {
-        this.ggWaveActive = ggWaveActive;
+    public void setActive(final boolean active) {
+        this.active = active;
     }
+
 }

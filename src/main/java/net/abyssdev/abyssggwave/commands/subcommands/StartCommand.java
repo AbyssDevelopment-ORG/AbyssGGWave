@@ -6,6 +6,7 @@ import net.abyssdev.abysslib.command.SubCommand;
 import net.abyssdev.abysslib.command.context.CommandContext;
 import net.abyssdev.abysslib.placeholder.PlaceholderReplacer;
 import net.abyssdev.abysslib.scheduler.AbyssScheduler;
+import net.abyssdev.abysslib.utils.PlayerUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -52,10 +53,13 @@ public final class StartCommand extends SubCommand {
             builder.append(context.getArguments()[i]);
         }
 
-        if (!this.plugin.isGgWaveActive()) {
-            this.plugin.setGgWaveActive(true);
+        if (!this.plugin.isActive()) {
+            this.plugin.setActive(true);
 
-            AbyssScheduler.sync().runLater(() -> this.plugin.setGgWaveActive(false), context.asInt(1) * 20L);
+            AbyssScheduler.sync().runLater(() -> {
+                this.plugin.getRewardedPlayers().clear();
+                this.plugin.setActive(false);
+            }, context.asInt(1) * 20L);
         }
 
         final Player target = context.asPlayer(0);
@@ -63,11 +67,7 @@ public final class StartCommand extends SubCommand {
                 .addPlaceholder("%player%", target.getName())
                 .addPlaceholder("%package%", builder.toString());
 
-        for (final String command : this.commands) {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command
-                    .replace("%player%", target.getName())
-                    .replace("%package%", builder.toString()));
-        }
+        PlayerUtils.dispatchCommands(target, commands, replacer);
 
         for (final Player player : Bukkit.getOnlinePlayers()) {
             this.plugin.getMessageCache().sendMessage(player, "messages.donate", replacer);

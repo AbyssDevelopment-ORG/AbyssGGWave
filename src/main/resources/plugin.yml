@@ -1,5 +1,5 @@
 name: AbyssGGWave
-version: '${project.version}'
+version: '1.0.1'
 main: net.abyssdev.abyssggwave.AbyssGGWave
 authors:
     - Relocation
