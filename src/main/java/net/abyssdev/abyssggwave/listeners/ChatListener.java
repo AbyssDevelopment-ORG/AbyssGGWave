@@ -3,6 +3,7 @@ package net.abyssdev.abyssggwave.listeners;
 import lombok.Getter;
 import net.abyssdev.abyssggwave.AbyssGGWave;
 import net.abyssdev.abysslib.listener.AbyssListener;
+import net.abyssdev.abysslib.scheduler.AbyssScheduler;
 import net.abyssdev.abysslib.text.Color;
 import net.abyssdev.abysslib.utils.PlayerUtils;
 import org.bukkit.entity.Player;
@@ -37,8 +38,8 @@ public final class ChatListener extends AbyssListener<AbyssGGWave> {
         final Player player = event.getPlayer();
 
         if (!this.getPlugin().getRewardedPlayers().contains(player.getUniqueId())) {
-            PlayerUtils.dispatchCommands(player, this.rewardCommands);
             this.getPlugin().getRewardedPlayers().add(player.getUniqueId());
+            AbyssScheduler.sync().run(() -> PlayerUtils.dispatchCommands(player, this.rewardCommands));
         }
 
         event.setMessage(this.ggMessages.get(ThreadLocalRandom.current().nextInt(this.ggMessages.size())));

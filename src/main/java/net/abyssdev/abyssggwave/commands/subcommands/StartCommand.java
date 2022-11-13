@@ -67,7 +67,7 @@ public final class StartCommand extends SubCommand {
                 .addPlaceholder("%player%", target.getName())
                 .addPlaceholder("%package%", builder.toString());
 
-        PlayerUtils.dispatchCommands(target, commands, replacer);
+        PlayerUtils.dispatchCommands(target, this.commands, replacer);
 
         for (final Player player : Bukkit.getOnlinePlayers()) {
             this.plugin.getMessageCache().sendMessage(player, "messages.donate", replacer);
