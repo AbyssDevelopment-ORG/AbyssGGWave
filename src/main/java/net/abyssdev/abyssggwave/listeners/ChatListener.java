@@ -1,6 +1,6 @@
 package net.abyssdev.abyssggwave.listeners;
 
-import lombok.Getter;
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.abyssdev.abyssggwave.AbyssGGWave;
 import net.abyssdev.abysslib.listener.AbyssListener;
 import net.abyssdev.abysslib.scheduler.AbyssScheduler;
@@ -8,10 +8,10 @@ import net.abyssdev.abysslib.text.Color;
 import net.abyssdev.abysslib.utils.PlayerUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class ChatListener extends AbyssListener<AbyssGGWave> {
@@ -27,7 +27,7 @@ public final class ChatListener extends AbyssListener<AbyssGGWave> {
 
     @EventHandler
     public void onChat(final AsyncPlayerChatEvent event) {
-        if (!this.getPlugin().isActive()) {
+        if (!this.plugin.isActive()) {
             return;
         }
 
@@ -37,12 +37,12 @@ public final class ChatListener extends AbyssListener<AbyssGGWave> {
 
         final Player player = event.getPlayer();
 
-        if (!this.getPlugin().getRewardedPlayers().contains(player.getUniqueId())) {
-            this.getPlugin().getRewardedPlayers().add(player.getUniqueId());
+        if (!this.plugin.getRewardedPlayers().contains(player.getUniqueId())) {
+            this.plugin.getRewardedPlayers().add(player.getUniqueId());
             AbyssScheduler.sync().run(() -> PlayerUtils.dispatchCommands(player, this.rewardCommands));
         }
 
-        event.setMessage(this.ggMessages.get(ThreadLocalRandom.current().nextInt(this.ggMessages.size())));
+        event.setMessage(PlaceholderAPI.setPlaceholders(player, this.ggMessages.get(ThreadLocalRandom.current().nextInt(this.ggMessages.size()))));
     }
 
 

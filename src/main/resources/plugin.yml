@@ -5,3 +5,4 @@ authors:
     - Relocation
 depend:
     - AbyssLib
+    - PlaceholderAPI
